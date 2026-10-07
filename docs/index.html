@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="1800">
+<title>Hype Feed 10c — World Pulse</title>
+<style>
+  :root {
+    --bg: #0f1115; --card: #161922; --text: #e2e8f0; --muted: #8a99ad;
+    --accent: #38bdf8; --active: #f59e0b; --elevated: #b45309; --border: #2a3241;
+    --neg: #c2410c; --pos: #16a34a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    display: flex; justify-content: center; align-items: center;
+    min-height: 100vh; padding: 20px;
+  }
+  .container {
+    width: 100%; max-width: 720px; background: var(--card);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  h1 { font-size: 1.2rem; letter-spacing: -0.5px; }
+  .pulse-badge { font-size: 0.85rem; background: rgba(56,189,248,0.1); color: var(--accent); padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(56,189,248,0.2); }
+  .pulse-badge.active { background: rgba(245,158,11,0.1); color: var(--active); border-color: rgba(245,158,11,0.2); }
+  .pulse-badge.elevated { background: rgba(180,83,9,0.12); color: var(--elevated); border-color: rgba(180,83,9,0.3); }
+  section { margin-bottom: 28px; }
+  h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 12px; }
+  .feed-item { margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px dashed var(--border); }
+  .feed-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .feed-title { font-size: 0.95rem; line-height: 1.4; color: var(--text); text-decoration: none; display: block; margin-bottom: 4px; }
+  .feed-title:hover { color: var(--accent); }
+  .feed-meta { font-size: 0.75rem; color: var(--muted); }
+  .load-tag { font-size: 0.7rem; border: 1px solid var(--muted); border-radius: 3px; padding: 1px 6px; margin-left: 6px; vertical-align: middle; }
+  .load-tag.neg { color: var(--neg); border-color: var(--neg); }
+  .load-tag.pos { color: var(--pos); border-color: var(--pos); }
+  .load-tag.neu { color: var(--muted); }
+  footer { border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-note { font-size: 0.75rem; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>☕ HYPE FEED 10C</h1>
+      <div class="pulse-badge elevated">Pulse: -0.25 · Peak: -0.73 (ELEVATED)</div>
+    </header>
+    <section>
+      <h2>1. Main facts (cross-confirmed, low emotional load first)</h2>
+      
+        <div class="feed-item">
+          <a href="https://www.bbc.co.uk/news/articles/c8kgezxn54qko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer" class="feed-title">
+            [1] US death row inmate Christa Pike awake and speaking after failed execution, lawyers say
+            <span class="load-tag neg">-0.6</span>
+          </a>
+          <div class="feed-meta">Sources (4): BBC World · Deutsche Welle · France 24 · Japan Today</div>
+        </div>
+        <div class="feed-item">
+          <a href="https://www.dw.com/en/paramount-and-warner-bros-merge-into-one-hollywood-giant/a-79565762?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener noreferrer" class="feed-title">
+            [2] Paramount and Warner Bros merge into one Hollywood giant
+            <span class="load-tag neu">+0.05</span>
+          </a>
+          <div class="feed-meta">Sources (1): Deutsche Welle</div>
+        </div>
+        <div class="feed-item">
+          <a href="https://japantoday.com/category/world/trump-highlights-a-big-new-defense-project-in-maryland-a-blue-state-whose-governor-won%27t-be-there" target="_blank" rel="noopener noreferrer" class="feed-title">
+            [3] Trump highlights big new defense project in Maryland
+            <span class="load-tag neu">+0.05</span>
+          </a>
+          <div class="feed-meta">Sources (1): Japan Today</div>
+        </div>
+    </section>
+    <section>
+      <h2>2. Balancing signals (positive load)</h2>
+      
+        <div class="feed-item">
+          <a href="https://www.bbc.co.uk/news/articles/cq203mymlvkeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer" class="feed-title">
+            &#39;Ghost particles&#39; from space telescope wins physics Nobel
+            <span class="load-tag pos">+0.52</span>
+          </a>
+          <div class="feed-meta">Source: BBC World · Region: UK</div>
+        </div>
+        <div class="feed-item">
+          <a href="https://www.theguardian.com/global-development/2026/oct/05/guardian-readers-fundraising-somalian-boy-injured-in-us-strike-surgery-abdiqadir-salah" target="_blank" rel="noopener noreferrer" class="feed-title">
+            Guardian readers fund life-changing surgery for Somali boy injured in US airstrike
+            <span class="load-tag pos">+0.35</span>
+          </a>
+          <div class="feed-meta">Source: The Guardian · Region: UK</div>
+        </div>
+    </section>
+    <footer>
+      <div class="footer-note">Updated 7 Oct 2026, 04:57 · Next cycle 08:00 / 18:00</div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+name: Cycle
+
+on:
+  schedule:
+    # 08:00 and 18:00 Europe/Vilnius (approximate, UTC)
+    - cron: '0 5 * * *'
+    - cron: '0 15 * * *'
+  workflow_dispatch:      # manual trigger from GitHub UI
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Run cycle
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FEED_TZ: Europe/Vilnius
+        run: node generate.js
+
+      - name: Commit results
+        run: |
+          git config user.name "hype-feed-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/ cache/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "cycle: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi
