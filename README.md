@@ -142,7 +142,7 @@ Free tier of Gemini is sufficient for two cycles per day.
 
 ## Current status
 
-* **Active & Stable:** RSS ingestion from 10 global nodes, hybrid Gemini classification (with ~3% API usage via caching), fallback lexicons, and static HTML generation running locally on Arch Linux (ThinkPad T430).
+* **Active & Stable:** RSS ingestion from 7 global nodes, hybrid Gemini classification (with ~3% API usage via caching), fallback lexicons, and static HTML generation running locally on Arch Linux (ThinkPad T430).
 * **Known limitations:** Manual triggering twice a day (automation via GitHub Actions planned); calibration weights ongoing.
 
 ---
