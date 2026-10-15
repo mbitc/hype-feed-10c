@@ -217,7 +217,7 @@ export async function classifyBatch(articles) {
       const g = byId.get(id);
       if (g && Number.isFinite(g.intention) && Number.isFinite(g.intensity)) {
         const intention = clamp(g.intention, -1, 1);
-        const intensity = clamp(g.intensity, 0, 10) * 0.4;
+        const intensity = clamp(g.intensity, 0, 10);
         const confidence = clamp(Number(g.confidence) || 0.5, 0, 1);
         const category = String(g.category || 'other');
         cache.set(p.key, { t: Date.now(), intention, intensity, confidence, category });
